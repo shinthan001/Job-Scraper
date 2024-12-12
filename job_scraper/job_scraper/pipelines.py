@@ -8,10 +8,12 @@
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
 from job_scraper.settings import MONGODB_DB, MONGODB_PORT, MONGODB_SERVER, MONGODB_COLLECTION
-from w3lib.html import remove_tags
+from scrapy.exceptions import DropItem
+# from w3lib.html import remove_tags
+from bs4 import BeautifulSoup
 
 #MongoDBPipeline
-class MongoDBPipeline():
+class MongoDBPipeline:
 
    def __init__(self):
        connection = MongoClient(
@@ -25,7 +27,13 @@ class MongoDBPipeline():
        self.collection.insert_one(dict(item))
        return item    
 
-class CleanItemPipeline():
+class CleanItemPipeline:
    def process_item(self, item, spider):
-       item['details'] = remove_tags(item['details'])
+       item['details'] = BeautifulSoup(item['details']).get_text()
        return item
+
+class CheckItemPipeline:
+    def process_item(self, item, spider):
+        if not item['title'] or not item['location'] or not item['details']:
+            raise DropItem("Missing field!")
+        return item
