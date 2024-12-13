@@ -8,8 +8,8 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 
-# change here accordingly 
-DRIVER_PATH = "C:\\Users\\shinthantaun\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"
+###### change here accordingly #######
+DRIVER_PATH = "C:\\Users\\Shin\\chromedriver-win64\\chromedriver.exe"
 KEYWORDS = 'Data Scientist'
 LOCATION = 'Singapore'
 
@@ -27,7 +27,7 @@ MONGODB_COLLECTION = 'job_scraper_{}_{}'.format(KEYWORDS,LOCATION)
 HTTP_PROXY = ""
 HTTPS_PROXY = ""
 NO_PROXY = ""
-####
+######################################
 
 
 BOT_NAME = "job_scraper"

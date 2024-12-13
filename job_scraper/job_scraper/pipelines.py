@@ -34,6 +34,6 @@ class CleanItemPipeline:
 
 class CheckItemPipeline:
     def process_item(self, item, spider):
-        if not item['title'] or not item['location'] or not item['details']:
+        if not item['title'] or not item['details']:
             raise DropItem("Missing field!")
         return item
