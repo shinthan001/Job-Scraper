@@ -33,10 +33,10 @@ This project is to crawl job portals and scrape job posts for any desired positi
 
 3. Change directory to `./job_scraper/job_scraper/spiders/` and run spiders.
 ```bash
- scrapy runspider jobStreet.py
+ scrapy runspider jobStreet.py #jobstreet job portal
 ```
 ```bash
- scrapy runspider careersGov.py
+ scrapy runspider careersGov.py # careers@gov.sg
 ```
 
 4. If you are not using MongoDB, run spider using following command to save data.
@@ -48,7 +48,10 @@ This project is to crawl job portals and scrape job posts for any desired positi
 
 - Primarily, KEYWORDS = 'Data Scientist', LOCATION = 'Singapore' were used to scrape data and basic EDA was conducted here [./Basic EDA.ipynb](Basic%20EDA.ipynb). 
 - Quantitative Analysis such as top 20 hiring companies were observed.
-- Basic NLP techniques such as lemmatization, text cleaning and n-gram analysis were also experiemented on job descriptions to retrieve common and meaningful key points to job hunters.
+- Basic NLP techniques such as lemmatization, text cleaning, n-gram analysis and wordcloud were also experiemented on job descriptions to retrieve common and meaningful key points to job hunters.
+
+    <img src='./img/img_2.png' width='50%' height='50%'>
+    <br />
 
 ## Future Project
 - With the use of proper datasets, I'm working on Named Entity Recognition (NER) to extract skills described in job descriptions.
