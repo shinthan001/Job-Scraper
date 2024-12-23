@@ -26,7 +26,7 @@ This project is to crawl job portals and scrape job posts for any desired positi
 
 1. In `./job_scraper/job_scraper/spiders/settings.py`, please modify your webdriver path, desired keywords or job and location accordingly. Add proxy settings if needed.
 
-2. If you have set up MongoDB on your local host, please set up server, port, db and collection name.
+2. If you have set up MongoDB on your local host, please modify server, port, db and collection name.
 
     <img src='./img/img_1.png' width='50%' height='50%'>
 <br />
