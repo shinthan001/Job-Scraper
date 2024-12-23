@@ -54,4 +54,4 @@ This project is to crawl job portals and scrape job posts for any desired positi
     <br />
 
 ## Future Project
-- With the use of proper datasets, I'm working on Named Entity Recognition (NER) to extract skills described in job descriptions.
+- I'm working on Named Entity Recognition (NER) to extract skills described in job descriptions.
