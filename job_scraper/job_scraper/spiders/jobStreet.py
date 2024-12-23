@@ -62,18 +62,19 @@ class JobstreetSpider(scrapy.Spider):
                    jobItem['url'] = self.driver.current_url 
                    jobItem['location'] = sel.xpath('//span[@data-automation="job-detail-location"]/text()').get()
                    jobItem['salary'] = sel.xpath('//span[@data-automation="job-detail-salary"]/text()').get()
+                   jobItem['classification'] = sel.xpath('//span[@data-automation="job-detail-classifications"]/text()').get()
                    yield jobItem
                                        
                # navigating to next page
                self.driver.get(parent_url)
                random_sleep()
                next_page = self.driver.find_element(By.XPATH, '//a[@rel="nofollow next"]')
-               if not next_page.is_enabled(): break
+               if not next_page.is_displayed(): break
                next_page.click() 
 
            except NoSuchElementException:
-               self.logger.info('No more page.\n')
                break
-        
+    
+       self.logger.info('No more page.\n')
        self.logger.info("Closing browser.\n")        
        self.driver.quit()

@@ -17,3 +17,4 @@ class JobItem(scrapy.Item):
    url = scrapy.Field()
    datePosted = scrapy.Field()
    employmentType = scrapy.Field()
+   classification = scrapy.Field()

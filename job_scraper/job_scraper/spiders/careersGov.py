@@ -37,9 +37,9 @@ class CareersgovSpider(scrapy.Spider):
                 next_page.click()
 
             except NoSuchElementException:
-                self.logger.info("No more page.\n")
                 break
 
+        self.logger.info("No more page.\n")
         self.logger.info("Closing browser.\n")        
         self.driver.quit()
 
@@ -54,7 +54,10 @@ class CareersgovSpider(scrapy.Spider):
         jobItem['details'] = json_data['description'] #
         jobItem['datePosted'] = json_data['datePosted']
         jobItem['employmentType'] = json_data['employmentType']
+        
+        # not available in source
         jobItem['location'] = None
         jobItem['salary'] = None
+        jobItem['classification'] = None
         yield jobItem
         # yield response.url
