@@ -10,19 +10,19 @@
 
 ###### change here accordingly #######
 DRIVER_PATH = "C:\\Users\\Shin\\chromedriver-win64\\chromedriver.exe"
-KEYWORDS = 'Data Scientist'
+KEYWORDS = 'Data Engineer'
 LOCATION = 'Singapore'
 
 ITEM_PIPELINES = {
   "job_scraper.pipelines.CheckItemPipeline": 200,
   "job_scraper.pipelines.CleanItemPipeline": 300,
-  # "job_scraper.pipelines.MongoDBPipeline": 400,
+  "job_scraper.pipelines.MongoDBPipeline": 400,
 }
 
-# MONGODB_SERVER = '127.0.0.1'
-# MONGODB_PORT = 27017
-# MONGODB_DB = 'ScraperProjects'
-# MONGODB_COLLECTION = 'job_scraper {} {}'.format(KEYWORDS,LOCATION)
+MONGODB_SERVER = '127.0.0.1'
+MONGODB_PORT = 27017
+MONGODB_DB = 'ScraperProjects'
+MONGODB_COLLECTION = 'job_scraper {} {}'.format(KEYWORDS,LOCATION)
 
 HTTP_PROXY = ""
 HTTPS_PROXY = ""

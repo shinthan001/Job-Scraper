@@ -60,9 +60,9 @@ class JobstreetSpider(scrapy.Spider):
                     jobItem['datePosted'] = None
 
                    jobItem['url'] = self.driver.current_url 
-                   jobItem['location'] = sel.xpath('//span[@data-automation="job-detail-location"]/text()').get()
+                   jobItem['location'] = sel.xpath('//span[@data-automation="job-detail-location"]/a/text()').get()
                    jobItem['salary'] = sel.xpath('//span[@data-automation="job-detail-salary"]/text()').get()
-                   jobItem['classification'] = sel.xpath('//span[@data-automation="job-detail-classifications"]/text()').get()
+                   jobItem['classification'] = sel.xpath('//span[@data-automation="job-detail-classifications"]/a/text()').get()
                    yield jobItem
                                        
                # navigating to next page
